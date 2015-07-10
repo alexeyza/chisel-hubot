@@ -13,5 +13,5 @@ module.exports = (robot) ->
             data4 = data3.replace /(&amp;)/, '&'
             data5 = data4.replace /(\n\n\n Bon Appetit)/,  ''
             data6 = data5.replace /(\n\n)/g, '\n'
-            data7 = ((((data6.replace /(Court)/, '*Court*').replace /(Mac's)/, "*Mac's*").replace /(Nibbles & Bytes)/, "*Nibbles & Bytes*").replace /(SciCafe)/, "*SciCafe*").replace /(Commons)/, "*Commons*"
+            data7 = ((((data6.replace /(Court)/, '\n*Court*').replace /(Mac's)/, "\n*Mac's*").replace /(Nibbles & Bytes)/, "\n*Nibbles & Bytes*").replace /(SciCafe)/, "\n*SciCafe*").replace /(Commons)/, "\n*Commons*"
             msg.send data7
