@@ -1,7 +1,17 @@
 # Description:
 #   Replies with UVic's soup of the day information
 #
-# use: hubot soup of the day
+# Dependencies:
+#   None
+#
+# Configuration:
+#   None
+#
+# Commands:
+#   hubot soup of the day - prints the offered soup of the day at UVic
+#
+# Author:
+#   alexeyza
 
 module.exports = (robot) ->
     robot.respond /soup of the day/i, (msg) ->
