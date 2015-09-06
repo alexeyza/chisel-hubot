@@ -8,7 +8,7 @@
 #   None
 #
 # Commands:
-#   hubot uvic service status - prints the offered soup of the day at UVic
+#   hubot status of uvic services - prints the offered soup of the day at UVic
 #
 # Author:
 #   alexeyza
