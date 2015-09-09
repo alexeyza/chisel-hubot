@@ -17,7 +17,7 @@
 #
 
 module.exports = (robot) ->
- robot.respond /proofread (text|url) (.*)$/i, (msg) ->
+ robot.respond /proofread (text|url) ([.\n]*)$/i, (msg) ->
     option = msg.match[1]
     source = msg.match[2]
 
