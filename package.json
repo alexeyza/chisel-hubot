@@ -18,7 +18,8 @@
     "hubot-scripts": "^2.16.2",
     "hubot-shipit": "^0.2.0",
     "hubot-slack": "^3.3.0",
-    "hubot-thank-you": "0.0.3"
+    "hubot-thank-you": "0.0.3",
+    "proofreader": "^0.6.4"
   },
   "engines": {
     "node": "0.10.x"
