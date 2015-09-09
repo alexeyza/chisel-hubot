@@ -26,7 +26,7 @@ module.exports = (robot) ->
         command = "node node_modules/proofreader/bin/cmd.js -u " + source
     else
         filename = "proofread_temp.md"
-        @exec "echo " + source + " > " + filename
+        @exec 'printf "' + source + '" > ' + filename
         command = "node node_modules/proofreader/bin/cmd.js -f " + filename
 
     @exec command, (error, stdout, stderr) ->
@@ -34,6 +34,11 @@ module.exports = (robot) ->
 
         # Remove Bash color codes from output
         message = stdout.replace(/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]/g, "")
-        msg.send message
+
+        if message=='### Results for ' + filename + ' ###\n\n'
+            no_suggestions = ["Well written", "You're awesome!", "No comments"]
+            msg.send msg.random no_suggestions
+        else
+            msg.send message
         
         # msg.send stderr
