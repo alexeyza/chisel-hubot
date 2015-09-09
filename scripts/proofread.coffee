@@ -30,7 +30,10 @@ module.exports = (robot) ->
         command = "node node_modules/proofreader/bin/cmd.js -f " + filename
 
     @exec command, (error, stdout, stderr) ->
-#      msg.send error
-      message = stdout.replace(/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]/g, "")
-      msg.send message
-#      msg.send stderr
+        # msg.send error
+
+        # Remove Bash color codes from output
+        message = stdout.replace(/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]/g, "")
+        msg.send message
+        
+        # msg.send stderr
