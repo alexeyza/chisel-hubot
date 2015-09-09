@@ -31,5 +31,6 @@ module.exports = (robot) ->
 
     @exec command, (error, stdout, stderr) ->
 #      msg.send error
-      msg.send stdout
+      message = stdout.replace(/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]/g, "")
+      msg.send message
 #      msg.send stderr
