@@ -17,7 +17,7 @@ module.exports = (robot) ->
     robot.respond /confirm meetings/i, (msg) ->
         sender = msg.message.user.name.toLowerCase()
     
-        if sender is "margaret.anne.storey" || true
-            robot.messageRoom '#general', "<!channel>: Please check the calendar and let <!margaret.anne.storey> know if the time doesn't work for you. You can switch directly if someone will switch with you, or remove it if you don't need to meet."
+        if sender is "margaret.anne.storey" || sender is "cassie"
+            robot.messageRoom '#general', "<!channel>: Please check the calendar and let @{margaret.anne.storey} know if the time doesn't work for you. You can switch directly if someone will switch with you, or remove it if you don't need to meet."
         else
-            msg.reply "sorry, you're not authorized"
+            msg.reply "sorry, you're not authorized @{alexeyza}"
