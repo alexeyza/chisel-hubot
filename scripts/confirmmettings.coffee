@@ -18,6 +18,6 @@ module.exports = (robot) ->
         sender = msg.message.user.name.toLowerCase()
     
         if sender is "margaret.anne.storey"
-            msg.respond "@channel Please check the calendar and let @margaret.anne.storey know if the time doesn't work for you. You can switch directly if someone will switch with you, or remove it if you don't need to meet."
+            msg.respond "@channel: Please check the calendar and let @margaret.anne.storey know if the time doesn't work for you. You can switch directly if someone will switch with you, or remove it if you don't need to meet."
         else
             msg.reply "sorry, you're not authorized"         
