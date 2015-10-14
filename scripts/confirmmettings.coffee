@@ -20,4 +20,4 @@ module.exports = (robot) ->
         if sender is "margaret.anne.storey" || sender is "cassie"
             robot.messageRoom '#general', "<!channel>: Please check the calendar and let @U03Q115P4 know if the time doesn't work for you. You can switch directly if someone will switch with you, or remove it if you don't need to meet."
         else
-            msg.reply "sorry, you're not authorized @U03Q115P4"
+            msg.reply "sorry, you're not authorized <@U03Q115P4> <!U03Q115P4> U03Q115P4"
