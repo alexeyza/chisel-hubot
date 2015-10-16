@@ -26,7 +26,7 @@ module.exports = (robot) ->
   lulz = ['lol', 'rofl', 'lmao']
   
   robot.respond /lulz/i, (res) ->
-    res.send lulz[Math.floor(Math.random() * lulz.length)]
+    res.send ':smiley:'
   #
   # robot.topic (res) ->
   #   res.send "#{res.message.text}? That's a Paddlin'"
