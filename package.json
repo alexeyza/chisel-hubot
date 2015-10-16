@@ -20,8 +20,7 @@
     "hubot-slack": "^3.3.0",
     "hubot-thank-you": "0.0.3",
     "proofreader": "^0.6.4",
-    "cron": "^0.3.3",
-    "time": "^0.8.2"
+    "cron": "^0.3.3"
   },
   "engines": {
     "node": "0.10.x"
