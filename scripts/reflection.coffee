@@ -10,9 +10,9 @@
 # Author:
 #   alexeyza
 
-MESSAGES = ['Have a good weekend!', 'Hi, how was your week?', "What was your biggest challenge this week?", 'Remember to take care of yourself physically. Take the weekend off :)', "What's the main thing you'd like to accomplish next week?"]
+MESSAGES = ['Have a good weekend! :smiley:', 'Hi, how was your week?', "What was your biggest challenge this week? :muscle:", 'Remember to take care of yourself physically. Take the weekend off :gift: :smiley:', "What's the main thing you'd like to accomplish next week?"]
 
-MESSAGE_TIME = '0 50 15 * * 6' # F 1pm
+MESSAGE_TIME = '0 0 14 * * 6' # F 2pm
 USERS = ["alexeyza","cagomezt", "ben", "bin", "cassie","leif","maryi","margaret.anne.storey","bernice1","clebeuf","everbeek","marllos","tania"]
 
 cronJob = require('cron').CronJob
