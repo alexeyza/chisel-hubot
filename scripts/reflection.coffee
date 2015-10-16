@@ -14,7 +14,7 @@ messages = ['Have a good weekend!', 'Hi, how was your week?', 'What was your big
 
 TIMEZONE = "America/Vancouver"
 MESSAGE_TIME = '0 * * * * 5-6' # F 1pm
-ROOM = "U03PYHMN0"
+ROOM = "@U03PYHMN0"
 
 cronJob = require('cron').CronJob
 
