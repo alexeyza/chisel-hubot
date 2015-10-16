@@ -10,11 +10,10 @@
 # Author:
 #   alexeyza
 
-messages = ['Have a good weekend!', 'Hi, how was your week?', 'What was your biggest challenge this week?', 'Remember to take care of yourself physically. Take the weekend off.']
+MESSAGES = ['Have a good weekend!', 'Hi, how was your week?', "What was your biggest challenge this week?", 'Remember to take care of yourself physically. Take the weekend off :)', "What's the main thing you'd like to accomplish next week?"]
 
-TIMEZONE = "America/Vancouver"
-MESSAGE_TIME = '0 5 15 * * *' # F 1pm
-USERS = ["alexeyza","cagomezt"]
+MESSAGE_TIME = '0 30 15 * * 5' # F 1pm
+USERS = ["alexeyza","cagomezt", "ben", "bin", "cassie","leif","maryi","margaret.anne.storey","bernice1","clebeuf","everbeek","marllos","tania"]
 
 cronJob = require('cron').CronJob
 
@@ -22,6 +21,6 @@ module.exports = (robot) ->
         crontask = new cronJob MESSAGE_TIME,
                 ->
                         for USER in USERS
-                            robot.send {room: USER}, "testing new script, let alexey know it worked"
+                            robot.send {room: USER}, MESSAGES[Math.floor(Math.random() * MESSAGES.length)]
                 null
                 true
