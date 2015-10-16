@@ -13,15 +13,15 @@
 messages = ['Have a good weekend!', 'Hi, how was your week?', 'What was your biggest challenge this week?', 'Remember to take care of yourself physically. Take the weekend off.']
 
 TIMEZONE = "America/Vancouver"
-MESSAGE_TIME = '0 45 13 * * 5' # F 1pm
-ROOM = "#random"
+MESSAGE_TIME = '0 53 13 * * 5' # F 1pm
+ROOM = "@U03PYHMN0"
 
 cronJob = require('cron').CronJob
 
 module.exports = (robot) ->
         gohome = new cronJob MESSAGE_TIME,
                 ->
-                        robot.messageRoom ROOM, "testing"
-                        console.log ("testing worked")
+                        robot.send ROOM, "res.random messages"
                 null
                 true
+                TIMEZONE
