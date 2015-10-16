@@ -24,4 +24,3 @@ module.exports = (robot) ->
                         robot.messageRoom ROOM, "res.random messages"
                 null
                 true
-                TIMEZONE
