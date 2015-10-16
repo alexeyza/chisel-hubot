@@ -12,7 +12,7 @@
 
 MESSAGES = ['Have a good weekend!', 'Hi, how was your week?', "What was your biggest challenge this week?", 'Remember to take care of yourself physically. Take the weekend off :)', "What's the main thing you'd like to accomplish next week?"]
 
-MESSAGE_TIME = '0 35 15 * * *' # F 1pm
+MESSAGE_TIME = '0 38 15 * * 5' # F 1pm
 USERS = ["alexeyza"]
 
 cronJob = require('cron').CronJob
