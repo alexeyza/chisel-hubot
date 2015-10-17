@@ -10,10 +10,10 @@
 # Author:
 #   alexeyza
 
-MESSAGES = ['Have a good weekend! :smiley:', 'Hi, how was your week?', "What was your biggest challenge this week? :muscle:", 'Remember to take care of yourself physically. Take the weekend off :gift: :smiley:', "What's the main thing you'd like to accomplish next week?"]
+MESSAGES = ['Have a good weekend! :smiley:', 'Hi, how was your week?', "What was your biggest challenge this week? :muscle:", 'Remember to take care of yourself physically. Take the weekend off :gift: :smiley:', "What's the main thing you'd like to accomplish next week?", "Hey, good progress this week! :thumbsup:"]
 
-MESSAGE_TIME = '0 17 21 * * 6' # F 2pm
-USERS = ["U03PYHMN0"]
+MESSAGE_TIME = '0 0 14 * * 6' # F 2pm
+USERS = ["alexeyza","cagomezt", "ben", "bin", "cassie","maryi","margaret.anne.storey","bernice1","clebeuf","everbeek","marllos","tania"]
 
 cronJob = require('cron').CronJob
 
@@ -21,6 +21,6 @@ module.exports = (robot) ->
         crontask = new cronJob MESSAGE_TIME,
                 ->
                         for USER in USERS
-                            robot.messageRoom USER, MESSAGES[Math.floor(Math.random() * MESSAGES.length)]
+                            robot.send {room: USER}, MESSAGES[Math.floor(Math.random() * MESSAGES.length)]
                 null
                 true
