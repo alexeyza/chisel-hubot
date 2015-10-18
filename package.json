@@ -5,9 +5,9 @@
   "author": "Alexey Zagalsky <alexeyza@gmail.com>",
   "description": "Bite my shiny, metal ass!",
   "dependencies": {
-    "hubot": "^2.15.0",
+    "hubot": "^2.16.0",
     "hubot-diagnostics": "0.0.1",
-    "hubot-google-images": "^0.2.1",
+    "hubot-google-images": "^0.2.2",
     "hubot-google-translate": "^0.2.0",
     "hubot-help": "^0.1.1",
     "hubot-heroku-keepalive": "1.0.0",
@@ -17,12 +17,12 @@
     "hubot-rules": "^0.1.1",
     "hubot-scripts": "^2.16.2",
     "hubot-shipit": "^0.2.0",
-    "hubot-slack": "^3.3.0",
+    "hubot-slack": "^3.4.0",
     "hubot-thank-you": "0.0.3",
     "proofreader": "^0.6.4",
-    "cron": "^0.3.3"
+    "cron": "^1.0.9"
   },
   "engines": {
-    "node": "0.10.x"
+    "node": "4.2.x"
   }
 }
