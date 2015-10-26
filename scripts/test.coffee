@@ -20,7 +20,7 @@ module.exports = (robot) ->
     robot.respond /test/i, (res) ->
         # post the message
         robot.emit 'slack-attachment',
-          channel: "random"
+          channel: "U03PYHMN0"
           #username: "CustomBotName"
           #icon_url: "https://slack.global.ssl.fastly.net/9fa2/img/services/hubot_128.png"
           content:
