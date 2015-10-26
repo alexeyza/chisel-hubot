@@ -27,6 +27,6 @@ module.exports = (robot) ->
             #fallback: "fallback"
             title: "Weekly meeting reminder"
             #title_link: "https://github.com"
-            text: "<!channel> Do you need to meet Peggy this week? (if not, please update the calendar). Have you posted a weekly agenda? <C045ZMA62>"
+            text: "<!channel> Do you need to meet Peggy this week? (if not, please update the calendar). Have you posted a weekly agenda? <#C045ZMA62> <@C045ZMA62> C045ZMA62 #C045ZMA62 @C045ZMA62 #weekly-updates"
             image_url: "https://dl.dropboxusercontent.com/u/21932852/panic.png"
             #color: "#111111"
