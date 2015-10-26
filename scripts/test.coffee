@@ -21,12 +21,12 @@ module.exports = (robot) ->
         # post the message
         robot.emit 'slack-attachment',
           channel: "random"
-          username: "CustomBotName"
-          icon_url: "https://slack.global.ssl.fastly.net/9fa2/img/services/hubot_128.png"
+          #username: "CustomBotName"
+          #icon_url: "https://slack.global.ssl.fastly.net/9fa2/img/services/hubot_128.png"
           content:
-            fallback: "fallback"
-            title: "Testing script - please ignore"
-            title_link: "https://github.com"
-            text: "Shows up"
-            image_url: "https://assets-cdn.github.com/images/modules/logos_page/GitHub-Logo.png"
-            color: "#111111"
+            #fallback: "fallback"
+            title: "Weekly meeting reminder"
+            #title_link: "https://github.com"
+            text: "@channel Do you need to meet Peggy this week? (if not, please update the calendar). Have you posted a weekly agenda? #weekly-updates"
+            image_url: "https://dl.dropboxusercontent.com/u/21932852/panic.png"
+            #color: "#111111"
