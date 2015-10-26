@@ -7,17 +7,20 @@
 # Configuration:
 #   None
 #
-# Commands:
-#   hubot confirm meetings - sends a public message to the #general channel reminding everyone to verify their meeting.
-#
 # Author:
 #   alexeyza
 
+MESSAGE = "Just a reminder for your meeting with Peggy tomorrow. Please send an agenda to <@U03Q115P4>, or remove the meeting from the calendar if you don't need to meet."
+
+MESSAGE_TIME = '0 0 13 * * 3' # W 1pm
+USERS = ["alexeyza","cagomezt", "bin","maryi","clebeuf","everbeek","marllos","tania"]
+
+cronJob = require('cron').CronJob
+
 module.exports = (robot) ->
-    robot.respond /confirm meetings/i, (msg) ->
-        sender = msg.message.user.name.toLowerCase()
-    
-        if sender is "margaret.anne.storey" || sender is "cassie"
-            robot.messageRoom '#general', "<!channel>: Please check the calendar and let <@U03Q115P4> know if the time doesn't work for you. You can switch directly if someone will switch with you, or remove it if you don't need to meet."
-        else
-            msg.reply "sorry, you're not authorized"
+        crontask = new cronJob MESSAGE_TIME,
+                ->
+                        for USER in USERS
+                            robot.send {room: USER}, MESSAGE
+                null
+                true
