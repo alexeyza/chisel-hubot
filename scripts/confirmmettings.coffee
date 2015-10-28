@@ -10,7 +10,7 @@
 # Author:
 #   alexeyza
 
-MESSAGE = "Just a reminder for your meeting with Peggy tomorrow. Please send an agenda to <@U03Q115P4>, or remove the meeting from the calendar if you don't need to meet."
+MESSAGE = "Just a reminder for your meeting with Peggy this week. Please send an agenda to <@U03Q115P4>, or remove the meeting from the calendar if you don't need to meet."
 
 MESSAGE_TIME = '0 0 10 * * 3' # W 10am
 USERS = ["alexeyza","cagomezt", "bin","maryi","clebeuf","everbeek","marllos","tania"]
