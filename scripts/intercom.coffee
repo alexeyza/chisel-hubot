@@ -25,11 +25,21 @@
 module.exports = (robot) ->
   robot.router.post "/hubot/intercom", (req, res) ->
     body = req.body
-    user = '@'+body.to
+    user = body.to
     guest_name = body.name
     message = body.message
     guest_email = body.email
 
-    robot.send 'alexeyza','hello testing script'
+    if guest_name
+        if message
+            message = '\n>_"'+message+'"_'
+        else
+            message = ''
+        if guest_email
+            guest_email = ' <'+guest_email+'>'
+        else
+            guest_email = ''
+        robot.send user, 'Hi '+user+', '+guest_name+guest_email+' is looking for you at your office right now.'+message+'"'
+
     res.writeHead 200, {'Content-Type': 'text/plain'}
     res.end 'Thanks\n'
