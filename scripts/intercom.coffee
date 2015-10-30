@@ -39,7 +39,7 @@ module.exports = (robot) ->
             guest_email = ' <'+guest_email+'>'
         else
             guest_email = ''
-        robot.send user, 'Hi '+user+', '+guest_name+guest_email+' is looking for you at your office right now.'+message+'"'
+        robot.send 'alexeyza', 'Hi '+user+', '+guest_name+guest_email+' is looking for you at your office right now.'+message+'"'
 
     res.writeHead 200, {'Content-Type': 'text/plain'}
     res.end 'Thanks\n'
