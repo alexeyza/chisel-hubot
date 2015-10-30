@@ -1,5 +1,5 @@
 # Description:
-#   "Accepts POST data and broadcasts it"
+#   A script used as an intercom system, to notify Peggy someone was looking for her
 #
 # Dependencies:
 #   None
@@ -15,7 +15,7 @@
 #     message = <message>
 #     to = <to>
 #     email = <email>
-#     type = <type>
+#     name = <name>
 #
 #   curl -X POST http://localhost:8080/hubot/intercom -d to='alexeyza' -d name='guest' -d email=guest@gmail.com -d message='testing script'
 #   curl -X POST http://blooming-crag-5072.herokuapp.com/hubot/intercom -d to='alexeyza' -d name='guest' -d email='guest@gmail.com' -d message='testing'
