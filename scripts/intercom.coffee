@@ -30,16 +30,6 @@ module.exports = (robot) ->
     message = body.message
     guest_email = body.email
 
-    if guest_name
-        if message
-            message = '\n>_"'+message+'"_'
-        else
-            message = ''
-        if guest_email
-            guest_email = ' <'+guest_email+'>'
-        else
-            guest_email = ''
-        robot.send 'alexeyza', 'Hi '+user+', '+guest_name+guest_email+' is looking for you at your office right now.'+message+'"'
-
+    robot.send 'alexeyza','hello testing script'
     res.writeHead 200, {'Content-Type': 'text/plain'}
     res.end 'Thanks\n'
