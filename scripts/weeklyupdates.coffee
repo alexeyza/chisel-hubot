@@ -11,6 +11,7 @@
 #   alexeyza
 
 MESSAGE_TIME = '0 15 10 * * 1' # Monday 10:15am
+IMAGE_URL = ["https://dl.dropboxusercontent.com/u/21932852/phd.png", "https://dl.dropboxusercontent.com/u/21932852/panic.png"]
 
 cronJob = require('cron').CronJob
 
@@ -27,7 +28,7 @@ module.exports = (robot) ->
                             title: "Weekly meeting reminder"
                             #title_link: "https://github.com"
                             text: "<!channel> Do you need to meet Peggy this week? If so, send an agenda or face a cancelled meeting! If not, please update the calendar. <#C045ZMA62>"
-                            image_url: "https://dl.dropboxusercontent.com/u/21932852/panic.png"
+                            image_url: IMAGE_URL[Math.floor(Math.random() * IMAGE_URL.length)]
                             #color: "#111111"
                 null
                 true
