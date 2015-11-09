@@ -11,7 +11,7 @@
 #   alexeyza
 
 MESSAGE_TIME = '0 15 10 * * 1' # Monday 10:15am
-IMAGE_URL = ["https://dl.dropboxusercontent.com/u/21932852/phd.png", "https://dl.dropboxusercontent.com/u/21932852/panic.png"]
+IMAGE_URL = ["https://dl.dropboxusercontent.com/u/21932852/phd.png", "https://dl.dropboxusercontent.com/u/21932852/panic.png","https://acuriouswanderer.files.wordpress.com/2013/10/work-output.jpg","https://contemplativemammoth.files.wordpress.com/2014/02/phd3.gif"]
 
 cronJob = require('cron').CronJob
 
