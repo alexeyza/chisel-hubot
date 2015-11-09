@@ -26,7 +26,7 @@
 module.exports = (robot) ->
   robot.router.post "/hubot/intercom", (req, res) ->
     body = req.body
-    user = 'margaret\\.anne\\.storey' #body.to
+    user = 'Peggy' #body.to
     guest_name = body.name
     message = body.message
     guest_email = body.email
