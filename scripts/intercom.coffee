@@ -37,7 +37,7 @@ module.exports = (robot) ->
         else
             message = ''
         if guest_email
-            guest_email = ' <'+guest_email+'>'
+            guest_email = ' <'+'mailto:'+guest_email+'>'
         else
             guest_email = ''
         robot.send {room: user}, 'Hi '+user+', '+guest_name+guest_email+' was looking for you at your office just now.'+message
