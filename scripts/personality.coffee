@@ -15,7 +15,9 @@ module.exports = (robot) ->
         res.send "I live on Slack so technically I always work from home"
 
     robot.hear /fridge/i, (res) ->
-        res.send "http://www.phdcomics.com/comics/archive/phd050907s.gif"
+        rand = Math.floor(Math.random()*10)
+        if rand > 5
+            res.send "http://www.phdcomics.com/comics/archive/phd050907s.gif"
 
     hipchat_responses = ["How dare you mention that name! :rage: Hipchat killed my father...","Slack is 10x better than Hipchat"]
     robot.hear /hipchat/i, (res) ->
