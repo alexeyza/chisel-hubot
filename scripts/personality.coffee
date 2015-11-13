@@ -12,11 +12,13 @@
 
 module.exports = (robot) ->
     robot.hear /WFH/i, (res) ->
-        res.send "I live on Slack so technically I always work from home"
+        rand = Math.floor(Math.random()*10)
+        if rand > 6
+            res.send "I live on Slack so technically I always work from home"
 
     robot.hear /fridge/i, (res) ->
         rand = Math.floor(Math.random()*10)
-        if rand > 5
+        if rand > 6
             res.send "http://www.phdcomics.com/comics/archive/phd050907s.gif"
 
     hipchat_responses = ["How dare you mention that name! :rage: Hipchat killed my father...","Slack is 10x better than Hipchat"]
@@ -26,7 +28,9 @@ module.exports = (robot) ->
 
     help_responses = ["I want to help too but I can't, I'm just a robot :disappointed:","I want to help too :stuck_out_tongue:"]
     robot.hear /can help/i, (res) ->
-        res.send res.random help_responses
+        rand = Math.floor(Math.random()*10)
+        if rand > 4
+            res.send res.random help_responses
 
     greetings = ["Well hi there!","Hello!"]
     robot.hear /hi hubot|hello hubot/i, (res) ->
