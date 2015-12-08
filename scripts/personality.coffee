@@ -11,7 +11,7 @@
 #   alexeyza
 
 module.exports = (robot) ->
-    robot.hear /WFH/i, (res) ->
+    robot.hear /WFH|working at home|working from home/i, (res) ->
         rand = Math.floor(Math.random()*10)
         if rand > 6
             res.send "I live on Slack so technically I always work from home"
