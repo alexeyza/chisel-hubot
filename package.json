@@ -5,7 +5,7 @@
   "author": "Alexey Zagalsky <alexeyza@gmail.com>",
   "description": "Bite my shiny, metal ass!",
   "dependencies": {
-    "hubot": "^2.17.0",
+    "hubot": "^2.18.0",
     "hubot-diagnostics": "0.0.1",
     "hubot-google-images": "^0.2.6",
     "hubot-google-translate": "^0.2.0",
@@ -22,6 +22,6 @@
     "cron": "^1.1.0"
   },
   "engines": {
-    "node": "5.4.x"
+    "node": "5.5.x"
   }
 }
