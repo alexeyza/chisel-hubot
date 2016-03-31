@@ -20,7 +20,7 @@ module.exports = (robot) ->
             if match
                 output = ''
                 for service in match
-                    data = />([\w-]+)<\/a><td valign='top' style='text-align:right'><img src='https:\/\/helpdesk.uvic.ca\/tools\/media\/images\/([\w_]+).gif/g.exec service
+                    data = />([\w-]+)<\/a>[\<\>\/\s\w\(\)\d]*<td valign='top' style='text-align:right'><img src='https:\/\/helpdesk.uvic.ca\/tools\/media\/images\/([\w_]+).gif/g.exec service
                     if data
                         output += data[1]+' - '+data[2].replace /_/g, ' '
                         output += '\n'
