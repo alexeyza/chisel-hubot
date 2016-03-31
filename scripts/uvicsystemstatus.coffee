@@ -1,5 +1,5 @@
 # Description:
-#   Replies with UVic's service status
+#   Replies with UVic's systems status
 #
 # Dependencies:
 #   None
@@ -8,13 +8,13 @@
 #   None
 #
 # Commands:
-#   hubot status of uvic services - reports on the status of UVic systems
+#   hubot status of uvic systems - reports on the status of UVic systems
 #
 # Author:
 #   alexeyza
 
 module.exports = (robot) ->
-    robot.respond /status of uvic services|is uvic email down|is uvic email working/i, (msg) ->
+    robot.respond /status of uvic systems|is uvic email down|is uvic email working/i, (msg) ->
         robot.http('https://www.uvic.ca/systems/status/index.php').get() (err, res, body) ->
             match = body.match(/>([\w-]+)<\/a>[\<\>\/\s\w\(\)\d]*<td valign='top' style='text-align:right'><img src='https:\/\/helpdesk.uvic.ca\/tools\/media\/images\/([\w_]+).gif/g)
             if match
