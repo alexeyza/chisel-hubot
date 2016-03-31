@@ -16,7 +16,7 @@
 module.exports = (robot) ->
     robot.respond /status of uvic services|is uvic email down|is uvic email working/i, (msg) ->
         robot.http('https://www.uvic.ca/systems/status/index.php').get() (err, res, body) ->
-            match = body.match(/>([\w-]+)<\/a><td valign='top' style='text-align:right'><img src='https:\/\/helpdesk.uvic.ca\/tools\/media\/images\/([\w_]+).gif/g)
+            match = body.match(/>([\w-]+)<\/a>[\<\>\/\s\w\(\)\d]*<td valign='top' style='text-align:right'><img src='https:\/\/helpdesk.uvic.ca\/tools\/media\/images\/([\w_]+).gif/g)
             if match
                 output = ''
                 for service in match
