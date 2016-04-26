@@ -26,4 +26,5 @@ module.exports = (robot) ->
                         output += '*\n'
                         output += (((data[2].replace /<li>/g, '').replace /<\/li>/g, '').replace /<span class="spell">/g, '').replace /<\/span>/g,''
                         output += '\n'
+                        output += 'https://www.uvic.ca/services/food/assets/images/photos/main/bnr_soup_special.jpg'
             msg.send output.replace(/\n$/, '')
