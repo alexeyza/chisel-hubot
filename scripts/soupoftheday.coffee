@@ -16,12 +16,14 @@
 module.exports = (robot) ->
     robot.respond /soup of the day/i, (msg) ->
         robot.http('https://www.uvic.ca/services/food/home/events/current/soup-of-the-day.php').get() (err, res, body) ->
-            match = /<h2>(.|\n)+Bon Appetit/g.exec body
-            data = match[0].replace /<(?:.|\n)*?>/g, ''
-            data2 = data.replace /(&#160;)/, ' '
-            data3 = data2.replace /(&#8217;)/, '\''
-            data4 = data3.replace /(&amp;)/, '&'
-            data5 = data4.replace /(\n\n\n Bon Appetit)/,  ''
-            data6 = data5.replace /(\n\n)/g, '\n'
-            data7 = ((((data6.replace /(Court)/, '\n*Court*').replace /(Mac's)/, "\n*Mac's*").replace /(Nibbles & Bytes)/, "\n*Nibbles & Bytes*").replace /(SciCafe)/, "\n*SciCafe*").replace /(Commons)/, "\n*Commons*"
-            msg.send data7
+            match = body.match(/<p>[<strong>]*<a href="[\.\/\w]*">([<strong>]*[\w\&\#\;\<\>\/\s]*[<\/strong>]*)<\/a>[<\/strong>]*<\/p>\n<ul>\n([\w\s\<\>\/\"\n\=]*)<\/ul>/g)
+            if match
+                output = ''
+                for place in match
+                    data = /<p>[<strong>]*<a href="[\.\/\w]*">([<strong>]*[\w\&\#\;\<\>\/\s]*[<\/strong>]*)<\/a>[<\/strong>]*<\/p>\n<ul>\n([\w\s\<\>\/\"\n\=]*)<\/ul>/g.exec place
+                    if data
+                        output += '*'+(((data[1].replace /<strong>/g, '').replace /<\/strong>/g, '').replace /\&amp;/g, '\&').replace /\&\#8217;/g, '\''
+                        output += '*\n'
+                        output += (((data[2].replace /<li>/g, '').replace /<\/li>/g, '').replace /<span class="spell">/g, '').replace /<\/span>/g,''
+                        output += '\n'
+            msg.send output.replace(/\n$/, '')
