@@ -33,7 +33,7 @@ module.exports = (robot) ->
             res.send res.random help_responses
 
     greetings = ["Well hi there!","Hello!"]
-    robot.hear /hello hubot/i, (res) ->
+    robot.hear /hi hubot|hello hubot/i, (res) ->
         res.send res.random greetings
 
     robot.respond /hello|what's up/i, (res) ->
