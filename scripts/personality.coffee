@@ -18,7 +18,7 @@ module.exports = (robot) ->
 
     robot.hear /fridge/i, (res) ->
         rand = Math.floor(Math.random()*10)
-        if rand > 6
+        if rand > 3
             res.send "http://www.phdcomics.com/comics/archive/phd050907s.gif"
 
     hipchat_responses = ["How dare you mention that name! :rage: Hipchat killed my father...","Slack is 10x better than Hipchat"]
@@ -33,7 +33,7 @@ module.exports = (robot) ->
             res.send res.random help_responses
 
     greetings = ["Well hi there!","Hello!"]
-    robot.hear /hi hubot|hello hubot/i, (res) ->
+    robot.hear /hello hubot/i, (res) ->
         res.send res.random greetings
 
     robot.respond /hello|what's up/i, (res) ->
