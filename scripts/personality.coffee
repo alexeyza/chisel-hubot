@@ -36,7 +36,7 @@ module.exports = (robot) ->
     robot.hear /hi hubot|hello hubot/i, (res) ->
         res.send res.random greetings
 
-    robot.respond /hi|hello|what's up/i, (res) ->
+    robot.respond /hello|what's up/i, (res) ->
         res.send res.random greetings
 
     slang_greetings = ["Hello!","Sup?","Hay is for horses."]
