@@ -44,14 +44,4 @@ module.exports = (robot) ->
         res.send res.random slang_greetings
 
     robot.respond /test/i, (res) ->
-        robot.emit 'slack-attachment',
-          channel: "alexeyza"
-          #username: "CustomBotName"
-          #icon_url: "https://slack.global.ssl.fastly.net/9fa2/img/services/hubot_128.png"
-          content:
-            #fallback: "fallback"
-            title: "Weekly meeting reminder"
-            #title_link: "https://github.com"
-            text: "Do you need to meet Peggy this week? If so, send an agenda or YOUR MEETING WILL BE CANCELLED! If not, please update the calendar ASAP. <@G0Y5TUV1C> <!G0Y5TUV1C> <#G0Y5TUV1C> G0Y5TUV1C"
-            image_url: IMAGE_URL[Math.floor(Math.random() * IMAGE_URL.length)]
-            #color: "#111111"
+        res.send '<@G0Y5TUV1C> <!G0Y5TUV1C> <#G0Y5TUV1C> G0Y5TUV1C <weekly-updates> @weekly-updates'
