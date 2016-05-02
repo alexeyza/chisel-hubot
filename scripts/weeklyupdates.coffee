@@ -27,7 +27,7 @@ module.exports = (robot) ->
                             #fallback: "fallback"
                             title: "Weekly meeting reminder"
                             #title_link: "https://github.com"
-                            text: "<!channel> Do you need to meet Peggy this week? If so, send an agenda or YOUR MEETING WILL BE CANCELLED! If not, please update the calendar ASAP. <#G0Y5TUV1C>"
+                            text: "<!channel> Do you need to meet Peggy this week? If so, send an agenda or YOUR MEETING WILL BE CANCELLED! If not, please update the calendar ASAP. <@G0Y5TUV1C>"
                             image_url: IMAGE_URL[Math.floor(Math.random() * IMAGE_URL.length)]
                             #color: "#111111"
                 null

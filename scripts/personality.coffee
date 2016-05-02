@@ -43,3 +43,5 @@ module.exports = (robot) ->
     robot.hear /hey hubot/i, (res) ->
         res.send res.random slang_greetings
 
+    robot.respond /test/i, (res) ->
+        res.send '<@G0Y5TUV1C>'
