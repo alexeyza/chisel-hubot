@@ -44,4 +44,4 @@ module.exports = (robot) ->
         res.send res.random slang_greetings
 
     robot.respond /test/i, (res) ->
-        res.send '<@G0Y5TUV1C> <!G0Y5TUV1C> <#G0Y5TUV1C>'
+        res.send '<@G0Y5TUV1C> <!G0Y5TUV1C> <#G0Y5TUV1C> G0Y5TUV1C'
