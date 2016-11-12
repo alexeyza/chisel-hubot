@@ -18,5 +18,8 @@ module.exports = (robot) ->
       msg.send 
         text: "I am a test message http://slack.com"
         attachments: [
-          text: "And here's an attachment!"
+            title: "Weekly meeting reminder",
+            image_url: "https://dl.dropboxusercontent.com/u/21932852/phd.png"
         ]
+
+            
