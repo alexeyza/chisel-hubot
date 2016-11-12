@@ -15,14 +15,20 @@
 
 module.exports = (robot) ->
     robot.respond /test/i, (msg) ->
-        robot.emit 'slack-attachment',
-                          channel: msg.message.room
-                          #username: "CustomBotName"
-                          #icon_url: "https://slack.global.ssl.fastly.net/9fa2/img/services/hubot_128.png"
-                          content:
-                            #fallback: "fallback"
-                            title: "Weekly meeting reminder"
-                            #title_link: "https://github.com"
-                            text: "<!channel> Do you need to meet Peggy on Monday? If so, send an agenda or YOUR MEETING WILL BE CANCELLED! If not, please update the calendar ASAP."
-                            image_url: IMAGE_URL[Math.floor(Math.random() * IMAGE_URL.length)]
-                            #color: "#111111"
+        #create the message with attachment object
+        msgData = {
+          channel: res.message.room
+          text: "Latest changes"
+          attachments: [
+            {
+              fallback: "Comparing #{latestRelease.name}...#{latestRelease.target_commitish} - #{compare.html_url}",
+              title: "Comparing #{latestRelease.name}...#{latestRelease.target_commitish}"
+              title_link: compare.html_url
+              text: commits_summary
+              mrkdwn_in: ["text"]
+            }
+          ]
+        }
+
+        # post the message
+        robot.adapter.customMessage msgData
