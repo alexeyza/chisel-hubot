@@ -15,16 +15,20 @@
 
 module.exports = (robot) ->
     robot.respond /soup of the day/i, (msg) ->
-        robot.http('https://www.uvic.ca/services/food/home/events/current/soup-of-the-day.php').get() (err, res, body) ->
-            match = body.match(/<p>[<strong>]*<span style="text-decoration: underline;">([<strong>]*[\w\&\#\;\<\>\/\s]*[<\/strong>]*)<\/span>[<\/strong>]*<\/p>\n<ul>\n([\w\s\<\>\/\"\n\=]*)<\/ul>/g)
+        robot.http('http://www.uvic.ca/services/food/home/events/current/todays-soups.php').get() (err, res, body) ->
+            match = body.match(/\<h3\>\<a href=\"\#\"\>([\w\s\'é]+)\<\/a\>\<\/h3\>\<div\>\<ul\>\n(\<li\>[\w\s\&\;]*\<\/li\>\n)+\<\/ul\>\<\/div\>/g)
             if match
                 output = ''
                 for place in match
-                    data = /<p>[<strong>]*<span style="text-decoration: underline;">([<strong>]*[\w\&\#\;\<\>\/\s]*[<\/strong>]*)<\/span>[<\/strong>]*<\/p>\n<ul>\n([\w\s\<\>\/\"\n\=]*)<\/ul>/g.exec place
+                    data = /\<h3\>\<a href=\"\#\"\>([\w\s\'é]+)\<\/a\>\<\/h3\>\<div\>\<ul\>\n(\<li\>[\w\s\&\;]*\<\/li\>\n)+\<\/ul\>\<\/div\>/g.exec place
                     if data
-                        output += '*'+(((data[1].replace /<strong>/g, '').replace /<\/strong>/g, '').replace /\&amp;/g, '\&').replace /\&\#8217;/g, '\''
+                        output += '*'+data[1]
                         output += '*\n'
-                        output += (((data[2].replace /<li>/g, '').replace /<\/li>/g, '').replace /<span class="spell">/g, '').replace /<\/span>/g,''
+                        soups = data[0].match(/\<li\>([\w\s\&\;]*)\<\/li\>\n/g)
+                        # output += soups[1]
+                        for soup in soups
+                            output += soup.substr(4,soup.lastIndexOf('<')-4).replace /\&amp;/g, '\&'
+                            output += '\n'
                         output += '\n'
                 #output += 'https://www.uvic.ca/services/food/assets/images/photos/main/bnr_soup_special.jpg'
-            msg.send output.replace(/\n$/, '')
+            msg.send output
