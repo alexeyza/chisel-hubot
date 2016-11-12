@@ -16,7 +16,7 @@
 module.exports = (robot) ->
     robot.respond /test/i, (msg) ->
         robot.emit 'slack-attachment',
-                          room: msg.message.room
+                          channel: msg.message.room
                           #username: "CustomBotName"
                           #icon_url: "https://slack.global.ssl.fastly.net/9fa2/img/services/hubot_128.png"
                           content:
