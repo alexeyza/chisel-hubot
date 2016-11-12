@@ -17,8 +17,8 @@ IMAGE_URL = ["https://dl.dropboxusercontent.com/u/21932852/phd.png", "https://dl
 
 module.exports = (robot) ->
     robot.respond /test/i, (msg) ->
-      msg.send 
-        channel: 'C03PYBLB6'
+      robot.send 
+        channel: 'C03PYBLB6',
         attachments: [
             title: "Weekly meeting reminder",
             text: "Remineder of meetings...",
