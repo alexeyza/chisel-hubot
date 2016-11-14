@@ -15,7 +15,11 @@
 
 IMAGE_URL = ["https://dl.dropboxusercontent.com/u/21932852/phd.png", "https://dl.dropboxusercontent.com/u/21932852/panic2.png", "https://dl.dropboxusercontent.com/u/21932852/panic.png"]
 
+attachment = 
+    text: "Test message"
+
 module.exports = (robot) ->
     robot.respond /test/i, (msg) ->
-      robot.send {room: 'C03PYBLB6'}, "test message"
+      robot.send room: 'C03PYBLB6', attachment
+
             
