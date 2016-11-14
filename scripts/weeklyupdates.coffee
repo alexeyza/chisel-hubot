@@ -10,8 +10,15 @@
 # Author:
 #   alexeyza
 
-MESSAGE_TIME = '0 45 10 * * 4' # Monday 10:15am
+MESSAGE_TIME = '0 15 10 * * 1' # Monday 10:15am
 IMAGE_URL = ["https://dl.dropboxusercontent.com/u/21932852/phd.png", "https://dl.dropboxusercontent.com/u/21932852/panic2.png", "https://dl.dropboxusercontent.com/u/21932852/panic.png"]
+
+attachment = 
+    attachments:[
+        text: "<!channel> A reminder to update your weekly updates. Do you need to meet Peggy? If so, send an agenda or YOUR MEETING WILL BE CANCELLED!"
+        title: "Weekly updates reminder",
+        image_url: IMAGE_URL[Math.floor(Math.random() * IMAGE_URL.length)]
+    ]
 
 cronJob = require('cron').CronJob
 
@@ -19,16 +26,6 @@ module.exports = (robot) ->
         crontask = new cronJob MESSAGE_TIME,
                 ->
                         # post a custom message
-                        robot.emit 'slack-attachment',
-                          channel: "general"
-                          #username: "CustomBotName"
-                          #icon_url: "https://slack.global.ssl.fastly.net/9fa2/img/services/hubot_128.png"
-                          content:
-                            #fallback: "fallback"
-                            title: "Weekly meeting reminder"
-                            #title_link: "https://github.com"
-                            text: "<!channel> Do you need to meet Peggy on Monday? If so, send an agenda or YOUR MEETING WILL BE CANCELLED! If not, please update the calendar ASAP."
-                            image_url: IMAGE_URL[Math.floor(Math.random() * IMAGE_URL.length)]
-                            #color: "#111111"
+                        robot.send room: 'C03PYBLB6', attachment
                 null
                 true
