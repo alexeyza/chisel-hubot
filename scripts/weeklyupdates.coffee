@@ -16,7 +16,7 @@ IMAGE_URL = ["https://dl.dropboxusercontent.com/u/21932852/phd.png", "https://dl
 attachment = 
     attachments:[
         text: "<!channel> A reminder to update your weekly updates. Do you need to meet Peggy? If so, send an agenda or YOUR MEETING WILL BE CANCELLED!"
-        title: "Weekly updates reminder",
+        title: "Weekly updates reminder"
         image_url: IMAGE_URL[Math.floor(Math.random() * IMAGE_URL.length)]
     ]
 
