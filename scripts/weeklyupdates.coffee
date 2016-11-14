@@ -10,7 +10,7 @@
 # Author:
 #   alexeyza
 
-MESSAGE_TIME = '0 15 09 * * 1' # Monday 9:15am
+MESSAGE_TIME = '0 20 9 * * 1' # Monday 9:15am
 IMAGE_URL = ["https://dl.dropboxusercontent.com/u/21932852/phd.png", "https://dl.dropboxusercontent.com/u/21932852/panic2.png", "https://dl.dropboxusercontent.com/u/21932852/panic.png"]
 
 attachment = 
