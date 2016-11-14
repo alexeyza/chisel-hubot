@@ -16,9 +16,11 @@
 IMAGE_URL = ["https://dl.dropboxusercontent.com/u/21932852/phd.png", "https://dl.dropboxusercontent.com/u/21932852/panic2.png", "https://dl.dropboxusercontent.com/u/21932852/panic.png"]
 
 attachment = 
-    text: "Just testing my new API ... :)"
-    title: "Weekly meeting reminder",
-    image_url: IMAGE_URL[Math.floor(Math.random() * IMAGE_URL.length)]
+    attachments:[
+        text: "Just testing my new API ... :)"
+        title: "Weekly meeting reminder",
+        image_url: IMAGE_URL[Math.floor(Math.random() * IMAGE_URL.length)]
+    ]
 
 module.exports = (robot) ->
     robot.respond /test/i, (msg) ->
